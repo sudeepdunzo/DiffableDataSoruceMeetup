@@ -8,8 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class CollectionViewDiffableSampleViewController: UIViewController {
+    
+    @IBOutlet var searchView: UISearchBar!
+    
+    @IBOutlet var colltionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
