@@ -23,17 +23,38 @@ struct ImageUrls:Decodable {
 struct ImagePost:Decodable {
     let description:String?
     let color:String?
+    let id:String
     let height:Int
     let width:Int
     let urls:ImageUrls
 }
 
+extension ImagePost:Hashable {
+    static func == (lhs: ImagePost, rhs: ImagePost) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 
-struct CollectionPost:Decodable {
+}
+
+
+struct CollectionPost:Decodable,Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    static func == (lhs: CollectionPost, rhs: CollectionPost) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     let description:String?
+    let id:String
     let title:String?
     let color:String?
     let cover_photo:ImagePost
+    
 }
 
 

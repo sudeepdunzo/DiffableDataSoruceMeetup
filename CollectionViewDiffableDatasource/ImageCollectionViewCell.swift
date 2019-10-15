@@ -10,6 +10,7 @@ import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell,ReusableCell {
 
+    @IBOutlet var imageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
