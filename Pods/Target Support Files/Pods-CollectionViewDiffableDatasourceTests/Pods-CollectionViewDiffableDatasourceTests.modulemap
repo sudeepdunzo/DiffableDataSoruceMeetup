@@ -1,0 +1,6 @@
+framework module Pods_CollectionViewDiffableDatasourceTests {
+  umbrella header "Pods-CollectionViewDiffableDatasourceTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
