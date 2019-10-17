@@ -12,7 +12,6 @@ import Foundation
 enum SectionViewModels {
     case photos
     case suggestions
-    case collections
 }
 
 

@@ -49,7 +49,7 @@ class CollectionViewDiffableSampleViewController: UIViewController {
     
     var dataSource: UICollectionViewDiffableDataSource<SectionViewModels, AnyHashable>! = nil
     
-//    var dataSource: UICollectionViewDiffableDataSource<SectionsData, Suggestion>! = nil
+//    var dataSource: UICollectionViewDiffableDataSource<SectionViewModels, Suggestion>! = nil
     
     private var dataSourceQueue =  DispatchQueue(label: "data source queueu")
     
@@ -170,8 +170,8 @@ extension CollectionViewDiffableSampleViewController:UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text {
             searchBar.searchTextField.resignFirstResponder()
-            self.apiContoller.getPhotos(for: text, fetchCollections: false)
-            self.apiContoller.workQueue.async {
+            self.apiContoller.getPhotos(for: text)
+            self.dataSourceQueue.async {
                 var snapshot = self.dataSource.snapshot()
                 snapshot.deleteAllItems()
                 self.dataSource.apply(snapshot)
@@ -188,7 +188,7 @@ extension CollectionViewDiffableSampleViewController:UISearchBarDelegate{
         self.hideSuggestion()
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {        self.apiContoller.workQueue.async {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {        self.dataSourceQueue.async {
             let newSuggestions = self.suggestions.filteredSuggestion(with: searchText)
             let hashable = newSuggestions.map { (suggestion) -> AnyHashable in
             return AnyHashable(suggestion)
@@ -239,7 +239,7 @@ extension CollectionViewDiffableSampleViewController {
     func fetchPhotos(for searchTerm:String) {
         self.searchView.searchTextField.resignFirstResponder()
         self.clearCurrentResults()
-        self.apiContoller.getPhotos(for: searchTerm, fetchCollections: false)
+        self.apiContoller.getPhotos(for: searchTerm)
     }
     
     func clearCurrentResults(){
