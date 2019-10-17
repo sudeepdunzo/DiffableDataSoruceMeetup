@@ -20,6 +20,8 @@ class CollectionViewDiffableSampleViewController: UIViewController {
     
     private var suggestions = SuggestionsController()
     
+    /* Example 2
+    
     
     private var apiContoller: UnSplashServiceController! {
            didSet {
@@ -43,15 +45,20 @@ class CollectionViewDiffableSampleViewController: UIViewController {
            }
        }
     
+    */
     
     
+
     
+    var dataSource: UICollectionViewDiffableDataSource<SectionViewModels, Suggestion>! = nil
     
-    var dataSource: UICollectionViewDiffableDataSource<SectionViewModels, AnyHashable>! = nil
+     /*
+       Example 2
+       
+       var dataSource: UICollectionViewDiffableDataSource<SectionViewModels, AnyHashable>! = nil
+    */
     
-//    var dataSource: UICollectionViewDiffableDataSource<SectionViewModels, Suggestion>! = nil
-    
-    private var dataSourceQueue =  DispatchQueue(label: "data source queueu")
+    //private var dataSourceQueue =  DispatchQueue(label: "data source queueu")
     
     
     // Data controllers
@@ -110,9 +117,13 @@ class CollectionViewDiffableSampleViewController: UIViewController {
         didSet{
             if let collectionView = colltionView {
                 registerCellsTo(CollectionView: collectionView)
-               // self.dataSource = UICollectionViewDiffableDataSource<SectionsData,Suggestion>
+                self.dataSource = UICollectionViewDiffableDataSource<SectionViewModels,Suggestion>(collectionView: collectionView, cellProvider:colletionViewDataMapper)
+                
+               /* Example 2
                 
                 self.dataSource = UICollectionViewDiffableDataSource<SectionViewModels, AnyHashable>(collectionView: collectionView, cellProvider:colletionViewDataMapper)
+ 
+              */
                 
                 if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
                     flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -144,6 +155,8 @@ class CollectionViewDiffableSampleViewController: UIViewController {
 
 extension CollectionViewDiffableSampleViewController:UICollectionViewDelegate {
     
+    /* Example2
+    
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.section == self.dataSource.snapshot().indexOfSection(.photos){
             if indexPath.row > (dataSource.snapshot().itemIdentifiers(inSection: .photos).count - 2) {
@@ -152,30 +165,45 @@ extension CollectionViewDiffableSampleViewController:UICollectionViewDelegate {
         }
 
     }
+ 
+   */
+    
+    
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        //Eample 2 part 1
+        /*
+        if let suggestion = self.dataSource.itemIdentifier(for:indexPath)  {
+            self.searchView.searchTextField.text = suggestion.name
+            self.fetchPhotos(for: suggestion.name)
+        }
+        */
+        
+        
+        
+        /*
         if indexPath.section == self.dataSource.snapshot().indexOfSection(.suggestions){
             if let suggestion = self.dataSource.itemIdentifier(for:indexPath)?.base  as? Suggestion {
                 self.searchView.searchTextField.text = suggestion.name
                 self.fetchPhotos(for: suggestion.name)
             }
-        }
+        }*/
         
     }
+
     
 }
 
 extension CollectionViewDiffableSampleViewController:UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text {
-            searchBar.searchTextField.resignFirstResponder()
-            self.apiContoller.getPhotos(for: text)
-            self.dataSourceQueue.async {
-                var snapshot = self.dataSource.snapshot()
-                snapshot.deleteAllItems()
-                self.dataSource.apply(snapshot)
-            }
+            
+            /*
+            self.fetchPhotos(for: text)
+            */
         }
     }
     
@@ -188,8 +216,21 @@ extension CollectionViewDiffableSampleViewController:UISearchBarDelegate{
         self.hideSuggestion()
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {        self.dataSourceQueue.async {
-            let newSuggestions = self.suggestions.filteredSuggestion(with: searchText)
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        //self.dataSourceQueue.async {
+        
+        let newSuggestions = self.suggestions.filteredSuggestion(with: searchText)
+        
+        
+        var snapShot = NSDiffableDataSourceSnapshot<SectionViewModels,Suggestion>()
+
+        snapShot.appendSections([.suggestions])
+           snapShot.appendItems(newSuggestions, toSection: .suggestions)
+        self.dataSource.apply(snapShot)
+        
+        
+        
+        /* Example 2
             let hashable = newSuggestions.map { (suggestion) -> AnyHashable in
             return AnyHashable(suggestion)
             }
@@ -197,7 +238,10 @@ extension CollectionViewDiffableSampleViewController:UISearchBarDelegate{
             snapShot.deleteItems(snapShot.itemIdentifiers(inSection: .suggestions))
             snapShot.appendItems(hashable, toSection: .suggestions)
          self.dataSource.apply(snapShot)
-        }
+        */
+        
+    //}
+       
     }
 
 }
@@ -205,36 +249,40 @@ extension CollectionViewDiffableSampleViewController:UISearchBarDelegate{
 extension CollectionViewDiffableSampleViewController{
     
     func showSuggestions(){
-        self.dataSourceQueue.async {
+       // self.dataSourceQueue.async {
             
-//            var snapShot = NSDiffableDataSourceSnapshot<SectionsData,Suggestion>()
-//
-//            snapShot.appendSections([.suggestions])
+            var snapShot = NSDiffableDataSourceSnapshot<SectionViewModels,Suggestion>()
+
+            snapShot.appendSections([.suggestions])
             
-            
+            /* Example 2
             var snapShot = self.dataSource.snapshot()
             if let _ = snapShot.indexOfSection(.photos) {
                 snapShot.insertSections([.suggestions], beforeSection: .photos)
             }else {
                 snapShot.appendSections([.suggestions])
             }
+ 
+            */
         snapShot.appendItems(self.suggestions.filteredSuggestion(with: nil), toSection: .suggestions)
             self.dataSource.apply(snapShot)
-        }
+       // }
     }
     
     func hideSuggestion(){
-        self.dataSourceQueue.async {
+       // self.dataSourceQueue.async {
             var snapShot = self.dataSource.snapshot()
             snapShot.deleteSections([.suggestions])
             self.dataSource.apply(snapShot)
-        }
+       // }
     }
 }
 
 
 // business logic
 
+
+/* Example 2
 extension CollectionViewDiffableSampleViewController {
     func fetchPhotos(for searchTerm:String) {
         self.searchView.searchTextField.resignFirstResponder()
@@ -243,10 +291,12 @@ extension CollectionViewDiffableSampleViewController {
     }
     
     func clearCurrentResults(){
-        self.dataSourceQueue.async {
+       // self.dataSourceQueue.async {
             var snapshot = self.dataSource.snapshot()
             snapshot.deleteAllItems()
             self.dataSource.apply(snapshot)
-        }
+       // }
     }
 }
+
+*/
