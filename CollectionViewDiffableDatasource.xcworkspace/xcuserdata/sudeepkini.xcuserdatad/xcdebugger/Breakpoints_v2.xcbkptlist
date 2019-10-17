@@ -7,175 +7,143 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "16ED7248-192D-4574-94B7-2078EE1EEC55"
+            uuid = "DB9A91FB-259A-490C-8860-015817E45A20"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CollectionViewDiffableDatasource/ApiServiceLayer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "309"
-            endingLineNumber = "309"
-            landmarkName = "makeApiCall(with:page:)"
+            startingLineNumber = "358"
+            endingLineNumber = "358"
+            landmarkName = "loadMore()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8DDE8DD8-8BC6-493C-9DBE-AEFEB8610A7F"
+            uuid = "403D0C4C-2F3C-4D47-86F0-299FC65A7837"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CollectionViewDiffableDatasource/ApiServiceLayer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "339"
-            endingLineNumber = "339"
-            landmarkName = "makeApiCall(with:page:)"
+            startingLineNumber = "333"
+            endingLineNumber = "333"
+            landmarkName = "makeApiCallCollections(with:page:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5B243696-48D6-4E57-8DCE-D9518FFFF181"
+            uuid = "29E59BCE-D6D0-470F-903D-93E291E5AAB1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CollectionViewDiffableDatasource/ApiServiceLayer.swift"
+            filePath = "CollectionViewDiffableDatasource/CollectionViewDiffableSampleViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "307"
-            endingLineNumber = "307"
-            landmarkName = "makeApiCall(with:page:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "5B243696-48D6-4E57-8DCE-D9518FFFF181 - 5d9965e6e52292d5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in CollectionViewDiffableDatasource.UnSplashServiceController.(makeApiCall in _858AC8D3A37182530351511BFCC8A1A9)(with: Swift.String, page: Swift.Int) -&gt; ()"
-                  moduleName = "CollectionViewDiffableDatasource"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sudeepkini/Documents/Experiments/CollectionViewDiffableDatasource/CollectionViewDiffableDatasource/ApiServiceLayer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "307"
-                  endingLineNumber = "307"
-                  offsetFromSymbolStart = "162">
-               </Location>
-               <Location
-                  uuid = "5B243696-48D6-4E57-8DCE-D9518FFFF181 - aaa7ea391a9e143c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;CollectionViewDiffableDatasource.ImageSearchResults, Alamofire.AFError&gt;) -&gt; () in closure #1 () -&gt; () in CollectionViewDiffableDatasource.UnSplashServiceController.(makeApiCall in _858AC8D3A37182530351511BFCC8A1A9)(with: Swift.String, page: Swift.Int) -&gt; ()"
-                  moduleName = "CollectionViewDiffableDatasource"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sudeepkini/Documents/Experiments/CollectionViewDiffableDatasource/CollectionViewDiffableDatasource/ApiServiceLayer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "309"
-                  endingLineNumber = "309"
-                  offsetFromSymbolStart = "146">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "698B3AD8-BA69-4023-9DEB-3D2D5CECC858"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CollectionViewDiffableDatasource/ApiServiceLayer.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "332"
-            endingLineNumber = "332"
-            landmarkName = "makeApiCall(with:page:)"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
+            landmarkName = "searchBarSearchButtonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6923F806-D894-40D6-B51B-01B094832032"
+            uuid = "75BB3268-E0DF-49E4-9429-2C1DFDCF0295"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CollectionViewDiffableDatasource/ApiServiceLayer.swift"
+            filePath = "CollectionViewDiffableDatasource/ImageCollectionViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321"
-            landmarkName = "makeApiCall(with:page:)"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "ImageCollectionViewCell"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3D276C73-5E2E-48F4-B31C-0C1B4AE16BFE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionViewDiffableDatasource/ImageCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "ImageCollectionViewCell"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "426E5C53-23CB-4AEC-AC86-ADCC7E4E7107"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionViewDiffableDatasource/ImageCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "ImageCollectionViewCell"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "52A761EB-28F6-4588-B6B7-DC4378BC5DE1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionViewDiffableDatasource/CollectionViewDiffableSampleViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "searchBar(_:textDidChange:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "ED7EB6E5-A987-4258-A47F-F56081AC3198"
+            uuid = "41487ACC-7EAE-4E58-AACC-2A6BD6B5FB0B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CollectionViewDiffableDatasource/ApiServiceLayer.swift"
+            filePath = "CollectionViewDiffableDatasource/CollectionViewDiffableSampleViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "314"
-            endingLineNumber = "314"
-            landmarkName = "makeApiCall(with:page:)"
-            landmarkType = "7">
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E03FDF10-4E15-4E4E-AC05-9894A781DF7B"
+            uuid = "7994A0E1-2990-439F-82AA-8DD7078BB8A9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CollectionViewDiffableDatasource/ApiServiceLayer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "326"
-            endingLineNumber = "326"
-            landmarkName = "makeApiCall(with:page:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E67831DA-9D96-4205-AFFB-5CEDF7E2380F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CollectionViewDiffableDatasource/ApiServiceLayer.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "325"
-            endingLineNumber = "325"
-            landmarkName = "makeApiCall(with:page:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A47852B8-F051-4548-96A9-7007D1EC3E7B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CollectionViewDiffableDatasource/ApiServiceLayer.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "312"
-            endingLineNumber = "312"
+            startingLineNumber = "310"
+            endingLineNumber = "310"
             landmarkName = "makeApiCall(with:page:)"
             landmarkType = "7">
          </BreakpointContent>

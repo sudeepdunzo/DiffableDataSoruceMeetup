@@ -10,35 +10,8 @@ import Foundation
 import Alamofire
 
 
-struct ImageUrls:Decodable {
-    let raw:String?
-    let full:String?
-    let regular:String?
-    let small:String?
-    let thumb:String?
-}
 
 
-
-struct ImagePost:Decodable {
-    let description:String?
-    let color:String?
-    let id:String
-    let height:Int
-    let width:Int
-    let urls:ImageUrls
-}
-
-extension ImagePost:Hashable {
-    static func == (lhs: ImagePost, rhs: ImagePost) -> Bool {
-        return lhs.id == rhs.id
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-
-}
 
 
 struct CollectionPost:Decodable,Hashable {
@@ -263,7 +236,7 @@ class UnSplashServiceController:SearchAPIProtocol {
         "Accept-Version": "v1"
     ]
     
-    private lazy var workQueue:DispatchQueue = DispatchQueue(label: "API Worker Queue")
+    lazy var workQueue:DispatchQueue = DispatchQueue(label: "API Worker Queue")
     
     
     
@@ -285,9 +258,9 @@ class UnSplashServiceController:SearchAPIProtocol {
     
     func getPhotos(for searchTerm: String, fetchCollections: Bool) {
         self.searchTerm = searchTerm
-        self.currentPhotosPageNumber = 0
+        self.currentPhotosPageNumber = 1
         self.photoLimitReached = false
-        self.currentCollectionsPageNumber = 0
+        self.currentCollectionsPageNumber = 1
         self.collectionLimitReached = false
         self.fetchCollections = fetchCollections
         self.makeApiCall(with: searchTerm, page: self.currentPhotosPageNumber)
@@ -303,41 +276,20 @@ class UnSplashServiceController:SearchAPIProtocol {
         let params:[String:Any] = ["query":searchTerm,"page":page,"per_page":10,"orientation":"squarish"]
         
         workQueue.async {
-            
-           let request =  AF.request(self.baseUrl+"/search/photos", method: .get, parameters:params ,encoding:URLEncoding(destination: .queryString), headers: self.headers).responseDecodable(of: ImageSearchResults.self, queue: self.workQueue) { (response) in
-                
-                if let imageReponse = response.value {
-                    self.currentPhotosPageNumber = page
-                    self.onPhotosFetch?(imageReponse.results,imageReponse.results.count > 0,true)
-                     self.photoLimitReached = !(imageReponse.results.count > 0)
-                }else{
-                    self.onPhotosFetch?(nil,true,false)
-                }
-                
-            }.responseJSON { response in
-                print("JSON Response \(response)")
+            if self.isMakingApiCall == false {
+                self.isMakingApiCall = true
+                    AF.request(self.baseUrl+"/search/photos", method: .get, parameters:params ,encoding:URLEncoding(destination: .queryString), headers: self.headers).responseDecodable(of: ImageSearchResults.self, queue: self.workQueue) { (response) in
+                            self.isMakingApiCall = false
+                               if let imageReponse = response.value {
+                                   self.currentPhotosPageNumber = page
+                                   self.onPhotosFetch?(imageReponse.results,imageReponse.results.count > 0,true)
+                                    self.photoLimitReached = !(imageReponse.results.count > 0)
+                               }else{
+                                   self.onPhotosFetch?(nil,true,false)
+                               }
+                               
+                           }
             }
-            .responseData { response in
-                switch response.result {
-                    case .success(let data) :
-                           do {
-
-                            let response = try JSONDecoder().decode(ImageSearchResults.self, from: data)
-                                print(response)
-                            }
-                           catch let error {
-                                print("error\(error)")
-                            }
-                case .failure(let error) :
-                    print("error\(error)")
-                }
-                print("Data Response\(response)")
-            }
-            .responseString { response in
-                print("String Response\(response)")
-            }
-            print(request)
-        
         }
     }
     
