@@ -26,14 +26,11 @@ extension Suggestion: Hashable {
     static func == (lhs: Suggestion, rhs: Suggestion) -> Bool {
         return lhs.identifier == rhs.identifier
     }
-    func contains(_ filter: String?) -> Bool {
-        guard let filterText = filter else { return true }
-        if filterText.isEmpty { return true }
-        let lowercasedFilter = filterText.lowercased()
-        return name.lowercased().contains(lowercasedFilter)
-    }
 }
 
+
+
+// UI Utilities
 
 extension Suggestion {
     
@@ -49,3 +46,8 @@ extension Suggestion {
     }
     
 }
+
+
+
+
+

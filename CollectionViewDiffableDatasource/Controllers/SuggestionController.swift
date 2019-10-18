@@ -39,3 +39,15 @@ extension SuggestionsController {
     }
 }
 
+
+
+
+private extension Suggestion {
+    func contains(_ filter: String?) -> Bool {
+        guard let filterText = filter else { return true }
+        if filterText.isEmpty { return true }
+        let lowercasedFilter = filterText.lowercased()
+        return name.lowercased().contains(lowercasedFilter)
+    }
+}
+

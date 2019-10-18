@@ -52,5 +52,50 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
         </scene>
+        <!--Sample1 View Controller-->
+        <scene sceneID="pDU-6H-Y1W">
+            <objects>
+                <viewController id="yjp-HG-46N" customClass="Sample1ViewController" customModule="CollectionViewDiffableDatasource" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qMz-jh-Bpw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="amW-FP-SdW">
+                                <rect key="frame" x="0.0" y="57" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oco-R1-2q6">
+                                <rect key="frame" x="0.0" y="113" width="414" height="742"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CwA-eu-5mA">
+                                    <size key="itemSize" width="320" height="320"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="KMF-ml-0B8" firstAttribute="bottom" secondItem="oco-R1-2q6" secondAttribute="bottom" constant="7" id="77J-Fs-Cx0"/>
+                            <constraint firstItem="oco-R1-2q6" firstAttribute="leading" secondItem="KMF-ml-0B8" secondAttribute="leading" id="G2F-Zp-C0P"/>
+                            <constraint firstItem="amW-FP-SdW" firstAttribute="top" secondItem="KMF-ml-0B8" secondAttribute="top" constant="13" id="Img-Qa-eQY"/>
+                            <constraint firstItem="amW-FP-SdW" firstAttribute="leading" secondItem="KMF-ml-0B8" secondAttribute="leading" id="OhQ-Nj-YTO"/>
+                            <constraint firstItem="oco-R1-2q6" firstAttribute="top" secondItem="amW-FP-SdW" secondAttribute="bottom" id="miN-dA-OXI"/>
+                            <constraint firstItem="KMF-ml-0B8" firstAttribute="trailing" secondItem="amW-FP-SdW" secondAttribute="trailing" id="pdf-L8-bjr"/>
+                            <constraint firstItem="KMF-ml-0B8" firstAttribute="trailing" secondItem="oco-R1-2q6" secondAttribute="trailing" id="qqQ-J8-GRb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KMF-ml-0B8"/>
+                    </view>
+                    <connections>
+                        <outlet property="colltionView" destination="oco-R1-2q6" id="10b-D9-1cY"/>
+                        <outlet property="searchView" destination="amW-FP-SdW" id="95h-1j-aV4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mcx-1c-rY7" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="846"/>
+        </scene>
     </scenes>
 </document>

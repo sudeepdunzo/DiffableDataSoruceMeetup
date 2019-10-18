@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E02F4D0235991C50060B5BC /* Sample1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E02F4CF235991C50060B5BC /* Sample1ViewController.swift */; };
 		0E2DBC9F23531E2B009FE716 /* ApiServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2DBC9E23531E2B009FE716 /* ApiServiceLayer.swift */; };
 		0E2DBCA12354607A009FE716 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2DBCA02354607A009FE716 /* Utilities.swift */; };
 		0E2DBCA4235460D4009FE716 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2DBCA2235460D4009FE716 /* ImageCollectionViewCell.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E02F4CF235991C50060B5BC /* Sample1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample1ViewController.swift; sourceTree = "<group>"; };
 		0E2DBC9E23531E2B009FE716 /* ApiServiceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceLayer.swift; sourceTree = "<group>"; };
 		0E2DBCA02354607A009FE716 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		0E2DBCA2235460D4009FE716 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -140,7 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				0ECE131F23584C3A00715953 /* Controllers */,
-				0ECE131E23584C2A00715953 /* DataModels */,
+				0ECE131E23584C2A00715953 /* ViewModels */,
 				0E71AB08234B483400213DC8 /* AppDelegate.swift */,
 				0E71AB0A234B483400213DC8 /* SceneDelegate.swift */,
 				0E71AB0C234B483400213DC8 /* CollectionViewDiffableSampleViewController.swift */,
@@ -153,6 +155,7 @@
 				0E2DBCA3235460D4009FE716 /* ImageCollectionViewCell.xib */,
 				0E2DBCAA235608F8009FE716 /* SuggestionsItemsCell.swift */,
 				0E2DBCAB235608F8009FE716 /* SuggestionsItemsCell.xib */,
+				0E02F4CF235991C50060B5BC /* Sample1ViewController.swift */,
 			);
 			path = CollectionViewDiffableDatasource;
 			sourceTree = "<group>";
@@ -175,14 +178,14 @@
 			path = CollectionViewDiffableDatasourceUITests;
 			sourceTree = "<group>";
 		};
-		0ECE131E23584C2A00715953 /* DataModels */ = {
+		0ECE131E23584C2A00715953 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				0ECE132023584C6A00715953 /* SectionsViewModels.swift */,
 				0ECE132223584E0600715953 /* SuggestionsViewModel.swift */,
 				0ECE132423584E1E00715953 /* ImagePostViewModel.swift */,
 			);
-			path = DataModels;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		0ECE131F23584C3A00715953 /* Controllers */ = {
@@ -445,6 +448,7 @@
 				0E2DBC9F23531E2B009FE716 /* ApiServiceLayer.swift in Sources */,
 				0E2DBCAC235608F8009FE716 /* SuggestionsItemsCell.swift in Sources */,
 				0E71AB0D234B483400213DC8 /* CollectionViewDiffableSampleViewController.swift in Sources */,
+				0E02F4D0235991C50060B5BC /* Sample1ViewController.swift in Sources */,
 				0ECE132323584E0600715953 /* SuggestionsViewModel.swift in Sources */,
 				0ECE132523584E1E00715953 /* ImagePostViewModel.swift in Sources */,
 				0E71AB09234B483400213DC8 /* AppDelegate.swift in Sources */,

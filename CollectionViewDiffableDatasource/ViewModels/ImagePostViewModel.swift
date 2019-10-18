@@ -10,6 +10,35 @@ import Foundation
 import UIKit
 
 
+
+struct ImagePostViewModel {
+    let id:String
+    let description:String?
+    let url:String
+    private let aspectRatio:CGFloat
+    init(id:String,url:String,height:Int,width:Int,description:String? = nil) {
+    self.id = id
+    self.url = url
+    self.description = description
+    self.aspectRatio = CGFloat(height)/CGFloat(width)
+    }
+}
+
+extension ImagePostViewModel:Hashable{
+    static func == (lhs: ImagePostViewModel, rhs: ImagePostViewModel) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}
+
+
+
+
+
+
 struct ImageUrls:Decodable {
     let raw:String?
     let full:String?

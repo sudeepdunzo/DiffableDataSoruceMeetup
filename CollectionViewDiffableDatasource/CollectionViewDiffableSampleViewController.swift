@@ -51,7 +51,7 @@ class CollectionViewDiffableSampleViewController: UIViewController {
     
 
     
-//    var dataSource: UICollectionViewDiffableDataSource<SectionViewModels, Suggestion>! = nil
+
     
 
        
@@ -61,19 +61,12 @@ class CollectionViewDiffableSampleViewController: UIViewController {
     private var dataSourceQueue =  DispatchQueue(label: "data source queueu")
     
     
-    // Data controllers
-    
+ 
    
     
     
 
-//    private var colletionViewDataMapper:(UICollectionView, IndexPath, Suggestion) -> UICollectionViewCell? = { (collectionView, indexPath, itemData:Suggestion) -> UICollectionViewCell? in
-//        let suggestionsCell = collectionView.dequeueReusableCell(indexPath: indexPath, retrunType:SuggestionsItemsCell.self)
-//            suggestionsCell.suggestionLabel.text = itemData.name
-//            suggestionsCell.setNeedsLayout()
-//            suggestionsCell.layoutIfNeeded()
-//        return suggestionsCell
-//    }
+
     
     
     
@@ -232,12 +225,22 @@ extension CollectionViewDiffableSampleViewController:UISearchBarDelegate{
             return AnyHashable(suggestion)
             }
             var snapShot = self.dataSource.snapshot()
-            snapShot.deleteItems(snapShot.itemIdentifiers(inSection: .suggestions))
+           
+            if snapShot.sectionIdentifiers.contains(.suggestions) {
+                snapShot.deleteItems(snapShot.itemIdentifiers(inSection: .suggestions))
+            }
+            else{
+                if snapShot.sectionIdentifiers.contains(.photos){
+                    snapShot.insertSections([.suggestions], beforeSection: .photos)
+                }
+                else{
+                    snapShot.appendSections([.suggestions])
+                }
+            }
+            
             snapShot.appendItems(hashable, toSection: .suggestions)
          self.dataSource.apply(snapShot)
-        
-        
-    }
+      }
        
     }
 
@@ -254,15 +257,18 @@ extension CollectionViewDiffableSampleViewController{
             
         
             var snapShot = self.dataSource.snapshot()
-            if let _ = snapShot.indexOfSection(.photos) {
-                snapShot.insertSections([.suggestions], beforeSection: .photos)
-            }else {
-                snapShot.appendSections([.suggestions])
+            if  !snapShot.sectionIdentifiers.contains(.suggestions){
+                           if let _ = snapShot.indexOfSection(.photos) {
+                               snapShot.insertSections([.suggestions], beforeSection: .photos)
+                           }else {
+                               snapShot.appendSections([.suggestions])
+                           }
+                
+                       
+                       snapShot.appendItems(self.suggestions.filteredSuggestion(with: nil), toSection: .suggestions)
+                           self.dataSource.apply(snapShot)
             }
- 
-        
-        snapShot.appendItems(self.suggestions.filteredSuggestion(with: nil), toSection: .suggestions)
-            self.dataSource.apply(snapShot)
+
        }
     }
     
