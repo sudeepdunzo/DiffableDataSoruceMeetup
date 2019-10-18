@@ -16,11 +16,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="268" height="235"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="VND-Vh-kEN">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="VND-Vh-kEN">
                         <rect key="frame" x="0.0" y="44" width="268" height="191"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="191" id="7sV-1e-o6y"/>
-                        </constraints>
                     </imageView>
                 </subviews>
             </view>
@@ -33,7 +30,6 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="268" height="235"/>
             <connections>
-                <outlet property="imageHeightConstraint" destination="7sV-1e-o6y" id="dcl-YN-IkV"/>
                 <outlet property="imageView" destination="VND-Vh-kEN" id="0PQ-pS-orT"/>
             </connections>
             <point key="canvasLocation" x="295.6521739130435" y="165.73660714285714"/>

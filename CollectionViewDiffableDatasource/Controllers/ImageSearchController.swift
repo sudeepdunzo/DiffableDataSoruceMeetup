@@ -20,15 +20,7 @@ fileprivate struct ImageSearchResults:Decodable {
 
 
 
-protocol SearchAPIProtocol {
-    
-    var onPhotosFetch:((_ results:[ImagePost]?,_ canLoadMore:Bool,_ success:Bool)->())? { get set }
-   
-    mutating func getPhotos(for searchTerm:String)
-    
-    mutating func loadMore()
 
-}
 
 
 struct SearchQueryObject:Encodable {
@@ -48,11 +40,11 @@ struct SearchQueryObject:Encodable {
 }
 
 
-class UnSplashServiceController:SearchAPIProtocol {
+class UnSplashServiceController {
  
 
 
-    var onPhotosFetch: (([ImagePost]?, Bool, Bool) -> ())?
+    var onPhotosFetch: (([ImagePostViewModel]?, Bool, Bool) -> ())?
 
     
     private let baseUrl = "https://api.unsplash.com/"
@@ -89,7 +81,12 @@ class UnSplashServiceController:SearchAPIProtocol {
                             self.isMakingApiCall = false
                                if let imageReponse = response.value {
                                    self.currentPhotosPageNumber = page
-                                   self.onPhotosFetch?(imageReponse.results,imageReponse.results.count > 0,true)
+                                  
+                                let imagePosts =  imageReponse.results.map { (post) -> ImagePostViewModel in
+                                    return ImagePostViewModel(id: post.id, url: post.urls.small!, height: post.height, width: post.width, description: post.description)
+                                }
+                                
+                                self.onPhotosFetch?(imagePosts,imageReponse.results.count > 0,true)
                                     self.photoLimitReached = !(imageReponse.results.count > 0)
                                }else{
                                    self.onPhotosFetch?(nil,true,false)

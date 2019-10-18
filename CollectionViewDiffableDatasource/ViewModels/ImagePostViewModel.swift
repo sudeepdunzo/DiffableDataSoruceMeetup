@@ -34,6 +34,11 @@ extension ImagePostViewModel:Hashable{
     }
 }
 
+extension ImagePostViewModel {
+    func getHeight(forContainerWidth width:CGFloat) -> CGFloat{
+        return  self.aspectRatio * width
+    }
+}
 
 
 
@@ -57,11 +62,7 @@ struct ImagePost:Decodable {
 }
 
 
-extension ImagePost {
-    func getHeight(forContainerWidth width:CGFloat) -> CGFloat{
-        return  CGFloat(CGFloat(self.height)/CGFloat(self.width) * width)
-    }
-}
+
 
 extension ImagePost:Hashable {
     static func == (lhs: ImagePost, rhs: ImagePost) -> Bool {

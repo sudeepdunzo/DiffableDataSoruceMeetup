@@ -15,8 +15,7 @@ class Sample1ViewController: UIViewController {
     private var colletionViewDataMapper:(UICollectionView, IndexPath, Suggestion) -> UICollectionViewCell? = { (collectionView, indexPath, itemData:Suggestion) -> UICollectionViewCell? in
         let suggestionsCell = collectionView.dequeueReusableCell(indexPath: indexPath, retrunType:SuggestionsItemsCell.self)
             suggestionsCell.suggestionLabel.text = itemData.name
-            suggestionsCell.setNeedsLayout()
-            suggestionsCell.layoutIfNeeded()
+
         return suggestionsCell
     }
 

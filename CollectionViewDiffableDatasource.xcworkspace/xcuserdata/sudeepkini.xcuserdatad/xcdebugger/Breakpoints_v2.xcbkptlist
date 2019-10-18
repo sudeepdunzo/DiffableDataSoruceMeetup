@@ -39,22 +39,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "29E59BCE-D6D0-470F-903D-93E291E5AAB1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CollectionViewDiffableDatasource/CollectionViewDiffableSampleViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "75BB3268-E0DF-49E4-9429-2C1DFDCF0295"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -160,8 +144,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "194"
             endingLineNumber = "194"
-            landmarkName = "searchBarSearchButtonClicked(_:)"
-            landmarkType = "7">
+            landmarkName = "Sample2ViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -176,7 +160,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "200"
             endingLineNumber = "200"
-            landmarkName = "searchBarTextDidBeginEditing(_:)"
+            landmarkName = "searchBar(_:textDidChange:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -192,7 +176,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "205"
             endingLineNumber = "205"
-            landmarkName = "searchBarTextDidEndEditing(_:)"
+            landmarkName = "searchBar(_:textDidChange:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -210,38 +194,6 @@
             endingLineNumber = "209"
             landmarkName = "searchBar(_:textDidChange:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "00480E8C-BE05-4E39-ACE8-07281A459DC2 - d420184bf1f83b10"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CollectionViewDiffableDatasource.CollectionViewDiffableSampleViewController.searchBar(_: __C.UISearchBar, textDidChange: Swift.String) -&gt; ()"
-                  moduleName = "CollectionViewDiffableDatasource"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sudeepkini/Documents/Experiments/CollectionViewDiffableDatasource/CollectionViewDiffableDatasource/CollectionViewDiffableSampleViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "216"
-                  endingLineNumber = "216"
-                  offsetFromSymbolStart = "190">
-               </Location>
-               <Location
-                  uuid = "00480E8C-BE05-4E39-ACE8-07281A459DC2 - cf6e88fbccbcc3d1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in CollectionViewDiffableDatasource.CollectionViewDiffableSampleViewController.searchBar(_: __C.UISearchBar, textDidChange: Swift.String) -&gt; ()"
-                  moduleName = "CollectionViewDiffableDatasource"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sudeepkini/Documents/Experiments/CollectionViewDiffableDatasource/CollectionViewDiffableDatasource/CollectionViewDiffableSampleViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "218"
-                  endingLineNumber = "218"
-                  offsetFromSymbolStart = "178">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
