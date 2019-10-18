@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Suggestion {
     let name: String
@@ -31,4 +32,20 @@ extension Suggestion: Hashable {
         let lowercasedFilter = filterText.lowercased()
         return name.lowercased().contains(lowercasedFilter)
     }
+}
+
+
+extension Suggestion {
+    
+    func getContinerWidth(forHight hight :CGFloat) -> CGFloat {
+
+        let constraintRect = CGSize(width: CGFloat.greatestFiniteMagnitude, height: hight)
+                
+                
+        let boundingBox = self.name.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, context: nil)
+
+            return ceil(boundingBox.width)
+    
+    }
+    
 }
