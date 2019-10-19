@@ -13,6 +13,9 @@ class Sample1ViewController: UIViewController {
     private var suggestions = SuggestionsController()
     
     private var colletionViewDataMapper:(UICollectionView, IndexPath, Suggestion) -> UICollectionViewCell? = { (collectionView, indexPath, itemData:Suggestion) -> UICollectionViewCell? in
+        
+    
+        
         let suggestionsCell = collectionView.dequeueReusableCell(indexPath: indexPath, retrunType:SuggestionsItemsCell.self)
             suggestionsCell.suggestionLabel.text = itemData.name
 
@@ -37,6 +40,9 @@ class Sample1ViewController: UIViewController {
             
             if let collectionView = colltionView {
                             registerCellsTo(CollectionView: collectionView)
+                
+              
+                
                     self.dataSource = UICollectionViewDiffableDataSource<SectionViewModels,Suggestion>(collectionView: collectionView, cellProvider:colletionViewDataMapper)
             }
         }
@@ -86,6 +92,7 @@ extension Sample1ViewController {
 extension Sample1ViewController:UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         // do nothing
+        self.searchView.resignFirstResponder()
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {

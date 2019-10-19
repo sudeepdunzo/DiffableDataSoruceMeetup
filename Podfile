@@ -7,6 +7,7 @@ target 'CollectionViewDiffableDatasource' do
 
   pod 'Alamofire', '~> 5.0.0-rc.2'
   pod 'Kingfisher', '~> 5.0'
+  pod 'DiffableDataSources'
 
 
   # Pods for CollectionViewDiffableDatasource
